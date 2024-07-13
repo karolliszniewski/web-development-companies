@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
-            $table->string('name');
-            $table->integer('size');
-            $table->foreignId('category_id')->constrained();
+            $table->string('name')->nullable();
+            $table->string('country')->nullable();
+            $table->integer('size')->nullable();
+            $table->foreignId('category_id')->nullable();
         });
     }
 
