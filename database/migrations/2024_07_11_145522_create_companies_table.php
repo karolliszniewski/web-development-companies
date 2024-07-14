@@ -16,9 +16,14 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
             $table->string('name')->nullable();
+            $table->string('city')->nullable();
             $table->string('country')->nullable();
+            $table->string('website')->nullable();
             $table->integer('size')->nullable();
-            $table->foreignId('category_id')->nullable();
+            $table->string('email')->nullable();
+            $table->text('reply_content')->nullable();
+            $table->boolean('has_replied')->default(false);
+            $table->boolean('mail_attempted')->default(false);
         });
     }
 
